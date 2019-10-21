@@ -7,9 +7,6 @@ import geni.rspec.igext as IG
 # Create a portal context.
 pc = portal.Context()
 
-#pc.defineParameter( "n", "Number of worker nodes, a number from 2 to 5", portal.ParameterType.INTEGER, 4 )
-#params = pc.bindParameters()
-
 # Create a Request object to start building the RSpec.
 request = pc.makeRequestRSpec()
 
@@ -18,7 +15,7 @@ nodeList = []
 
 tourDescription = \
 """
-This profile provides the template for  blah blah installed on Ubuntu 18.04
+This profile provides the template for blah blah installed on Ubuntu 18.04
 """
 
 #
@@ -51,10 +48,10 @@ for i in range(2):
   # running scripts on associated machines 
   if i == 0:
     node.addService(pg.Execute(shell="sh", command="sudo chmod 755 /local/repository/ldap_install.sh"))
-    node.addService(pg.Execute(shell="sh", command="/local/repository/ldap_install.sh"))
+    node.addService(pg.Execute(shell="sh", command="sudo /local/repository/ldap_install.sh"))
   else:
     node.addService(pg.Execute(shell="sh", command="sudo chmod 755 /local/repository/clientSide_ldap.sh"))
-    node.addService(pg.Execute(shell="sh", command="/local/repository/clientSide_ldap.sh"))
+    node.addService(pg.Execute(shell="sh", command="sudo /local/repository/clientSide_ldap.sh"))
   
   # Following 4 lines would work with ldap_install_combined.sh (lines 33-38 do the same thing)
   #node.addService(pg.Execute(shell="sh", command="sudo chmod 755 /local/repository/ldap_install_combined.sh"))
