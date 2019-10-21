@@ -21,7 +21,10 @@ for i in range(2):
     node = request.XenVM("ldapserver")    
   else:
     node = request.XenVM("ldapclient")
-   
+  
+  node.cores = 4
+  node.ram = 4096
+  
   node.routable_control_ip = "true"  
   node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU18-64-STD"
   iface = node.addInterface("if" + str(i))
