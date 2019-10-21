@@ -7,7 +7,8 @@ request = pc.makeRequestRSpec()
 
 tourDescription = \
 """
-This profile provides a two-node set to study SSO. One node will be the LDAP server, and the other node is a client who is to be authenticated using LDAP. 
+This profile provides a two-node set to study SSO. One node will be the LDAP server, and the other node 
+is a client who is to be authenticated using LDAP. 
 """
 
 tour = IG.Tour()
