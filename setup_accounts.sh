@@ -10,7 +10,6 @@ if hostname | grep -q namenode; then
     (( i++ ))
   done < <(find . -mindepth 1 -maxdepth 1 -type d \( ! -iname ".*" \) | sed 's|^\./||g')
 
-  sudo su
   groupadd hadoop
   for j in "${array[@]}"
   do
