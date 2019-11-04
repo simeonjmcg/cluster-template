@@ -24,11 +24,19 @@ tourDescription = \
 This profile provides the template for a Hadoop cluster with 1 name node and customizable number of data nodes.
 """
 
+tourInstructions = \
+"""
+After your instance boots (approx. 10-15 minutes), you can begin the setup process using 
+[Ambari Server WebUI](http://{host-namenode}:8080/) with the default admin/admin as username and password. 
+"""
+
 #
 # Setup the Tour info with the above description and instructions.
 #  
 tour = IG.Tour()
 tour.Description(IG.Tour.TEXT,tourDescription)
+tour.Instructions(IG.Tour.MARKDOWN, tourInstructions)
+
 request.addTour(tour)
 
 prefixForIP = "192.168.1."
