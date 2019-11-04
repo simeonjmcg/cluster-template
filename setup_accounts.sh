@@ -16,11 +16,10 @@ if hostname | grep -q namenode; then
     usermod -a -G hadoop $j
   done
     
-  sudo su hdfs
   for j in "${array[@]}"
   do
-    hdfs dfs -mkdir -p /user/$j
-    hdfs dfs -chown $j:hadoop /user/$j
-    hdfs dfs -chmod 755 /user/$j
+    sudo -u hadoop -c "hdfs dfs -mkdir -p /user/$j"
+    sudo -u hadoop -c "hdfs dfs -chown $j:hadoop /user/$j"
+    sudo -u hadoop -c "hdfs dfs -chmod 755 /user/$j"
   done
 fi
