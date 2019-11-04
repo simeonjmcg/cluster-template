@@ -3,7 +3,7 @@
 import sys
 import csv
 
-movieFile = "./movielens/movies.csv"
+movieFile = "./ml-latest/movies.csv"
 movieList = {}
 
 with open(movieFile, mode = 'r') as infile:
