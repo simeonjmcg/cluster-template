@@ -2,11 +2,7 @@
 import sys
 import csv
 
-# for nonHDFS run
-movieFile = "./movielens/movies.csv"
-
-# for HDFS run
-#movieFile = "./movies.csv"
+movieFile = "./movies.csv"
 movieList = {}
 
 with open(movieFile, mode = 'r') as infile:
