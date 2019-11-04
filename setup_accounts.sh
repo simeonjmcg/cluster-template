@@ -18,8 +18,8 @@ if hostname | grep -q namenode; then
     
   for j in "${array[@]}"
   do
-    sudo -u hdfs "hdfs dfs -mkdir -p /user/$j"
-    sudo -u hdfs "hdfs dfs -chown $j:hadoop /user/$j"
-    sudo -u hdfs "hdfs dfs -chmod 755 /user/$j"
+    sudo -H -u hdfs bash -c "hdfs dfs -mkdir -p /user/$j"
+    sudo -H -u hdfs bash -c "hdfs dfs -chown $j:hadoop /user/$j"
+    sudo -H -u hdfs bash -c "hdfs dfs -chmod 755 /user/$j"
   done
 fi
