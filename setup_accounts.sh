@@ -22,4 +22,9 @@ if hostname | grep -q namenode; then
     sudo -H -u hdfs bash -c "hdfs dfs -chown $j:hadoop /user/$j"
     sudo -H -u hdfs bash -c "hdfs dfs -chmod 755 /user/$j"
   done
+  
+  sudo -H -u hdfs bash -c "wget http://files.grouplens.org/datasets/movielens/ml-latest.zip"
+  sudo -H -u hdfs bash -c "unzip ml-latest.zip"
+  sudo -H -u hdfs bash -c "hdfs dfs -put ml-latest /"
+  sudo -H -u hdfs bash -c "hdfs dfs -chmod -R 755 /ml-latest"
 fi
