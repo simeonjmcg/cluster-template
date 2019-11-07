@@ -27,4 +27,7 @@ if hostname | grep -q namenode; then
   sudo -H -u hdfs bash -c "unzip ml-latest.zip"
   sudo -H -u hdfs bash -c "hdfs dfs -put ml-latest /"
   sudo -H -u hdfs bash -c "hdfs dfs -chmod -R 755 /ml-latest"
+  sudo -H -u hdfs bash -c "hdfs dfs -ls -h /ml-latest"
+  sudo -H -u hdfs bash -c "rm -Rf ml-latest"
+  sudo -H -u hdfs bash -c "rm ml-latest.zip"
 fi
