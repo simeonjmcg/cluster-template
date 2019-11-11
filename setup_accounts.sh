@@ -24,7 +24,7 @@ if hostname | grep -q namenode; then
   done
   
   sudo -H -u hdfs bash -c "wget -P /tmp http://files.grouplens.org/datasets/movielens/ml-latest.zip"
-  sudo -H -u hdfs bash -c "unzip /tmp/ml-latest.zip"
+  sudo -H -u hdfs bash -c "unzip /tmp/ml-latest.zip -d /tmp"
   sudo -H -u hdfs bash -c "hdfs dfs -put /tmp/ml-latest /"
   sudo -H -u hdfs bash -c "hdfs dfs -chmod -R 755 /ml-latest"
   sudo -H -u hdfs bash -c "hdfs dfs -ls -h /ml-latest"
