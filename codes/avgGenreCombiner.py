@@ -17,7 +17,7 @@ for line in sys.stdin:
     else:
         genreList[genre] = {}
         genreList[genre]["total_rating"] = ratingInfo["total_rating"]
-        genreList[genre]["total_count"] = 1
+        genreList[genre]["total_count"] = ratingInfo["total_count"]
 
 for genre in genreList:
     print ("%s\t%s" % (genre, json.dumps(genreList[genre])))
